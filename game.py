@@ -23,12 +23,14 @@ def create_adadachi():
 
 
 
+
+
 def start_game():
     display(TITLE)
     answer = input(GREETING)
     if answer.lower() == "y":
         create_adadachi()
-        while player.adadachi.hunger < 5:
+        while player.adadachi.hunger > 0 and player.adadachi.happiness > 0 and player.adadachi.poop_lvl < 10:
             option = input(OPTIONS).lower()
 
             if option == "s":
@@ -44,5 +46,10 @@ def start_game():
                 player.play_with_adadachi()
             elif option == "x":
                 return display(EXIT)
+        answer = input(LOST)
+        if answer.lower() == 'y':
+            start_game()
+        else:
+            display(EXIT)
+
         
-        display(LOST)
