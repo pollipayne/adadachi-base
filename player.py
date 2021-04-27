@@ -106,4 +106,17 @@ favorite game! They LOVED IT!")
 
 
     def food_result(self, food_choice):
-        pass
+        adadachi_hates = self.inventory['foods'][self.adadachi.personality["hates_food"]]
+        adadachi_fav = self.inventory['foods'][self.adadachi.personality["fav_food"]]
+        if adadachi_hates == food_choice:
+            print(f"You fed {food_choice} to {self.adadachi.name} but that is \
+their least favorite food! Whomp Whomp!")
+            self.adadachi.decrease_happiness()
+        elif adadachi_fav == food_choice:
+            print(f"You fed {food_choice} to {self.adadachi.name}, and that is their \
+favorite food! They LOVED IT!")
+            self.adadachi.favorite_increase_happiness()
+        else:
+            print(f"You fed {food_choice} to {self.adadachi.name}!")
+            self.adadachi.increase_happiness()
+        
