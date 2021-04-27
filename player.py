@@ -55,14 +55,14 @@ class Player:
         if adadachi_hates == game_choice:
             print(f"You played {game_choice} with {self.adadachi.name} but that is \
 their least favorite game! Whomp Whomp!")
-            self.adadachi.decrease_happiness()
+            self.adadachi.decrease_happiness(self.adadachi.happiness)
         elif adadachi_fav == game_choice:
             print(f"You played {game_choice} with {self.adadachi.name}, and that is their \
 favorite game! They LOVED IT!")
-            self.adadachi.favorite_increase_happiness()
+            self.adadachi.favorite_increase_happiness(self.adadachi.happiness)
         else:
             print(f"You played {game_choice} with {self.adadachi.name}!")
-            self.adadachi.increase_happiness()
+            self.adadachi.increase_happiness(self.adadachi.happiness)
             
 
     def feed(self):
@@ -111,12 +111,12 @@ favorite game! They LOVED IT!")
         if adadachi_hates == food_choice:
             print(f"You fed {food_choice} to {self.adadachi.name} but that is \
 their least favorite food! Whomp Whomp!")
-            self.adadachi.decrease_happiness()
+            self.adadachi.decrease_happiness(self.adadachi.hunger)
         elif adadachi_fav == food_choice:
             print(f"You fed {food_choice} to {self.adadachi.name}, and that is their \
 favorite food! They LOVED IT!")
-            self.adadachi.favorite_increase_happiness()
+            self.adadachi.favorite_increase_happiness(self.adadachi.hunger)
         else:
             print(f"You fed {food_choice} to {self.adadachi.name}!")
-            self.adadachi.increase_happiness()
+            self.adadachi.increase_happiness(self.adadachi.hunger)
         
