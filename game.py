@@ -19,6 +19,10 @@ def create_adadachi():
         "hates_food": random.randint(0,(len(foods)-1)),
         "hates_game": random.randint(0,(len(games)-1)),
     }
+    while personality["fav_food"] == personality["hates_food"] or personality["fav_game"] == personality["hates_game"]:
+        personality["fav_food"] = random.randint(0, (len(foods)-1))
+        personality["fav_game"] = random.randint(0, (len(foods)-1))
+
     player.adadachi = Adadachi(name,personality)
 
 
