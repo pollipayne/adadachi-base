@@ -9,7 +9,10 @@ class Adadachi:
         self.poop_lvl = 0
 
     def increase_happiness(self):
-        if self.happiness >= 10:
+        if self.happiness >= 10 and self.hunger >= 10 and self.poop_lvl == 0:
+            print(f"{self.name} is completely fulfilled! You WON!!")
+            print(DANCE_PARTY)
+        elif self.happiness >= 10:
             print(f'{self.name} is as happy as they can be! Try fulfilling their other needs.')
 
         else:
